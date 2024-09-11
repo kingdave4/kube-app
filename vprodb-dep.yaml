@@ -40,11 +40,3 @@ spec:
           awsElasticBlockStore:
              volumeID: vol-0a9efc80541da1744
              fsType: ext4
-
-      initContainers:
-        - name: wait-for-db
-          image: busybox
-          command: ['sh', '-c', 'until nslookup vprodb.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for vprodb; sleep 2; done;']
-        - name: wait-for-mc
-          image: busybox
-          command: ['sh', '-c', 'until nslookup vpromc01.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for vprocache01; sleep 2; done;']
