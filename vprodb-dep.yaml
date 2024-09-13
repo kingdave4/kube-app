@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vprodb
-        image: vprofile/vprofiledb:V1
+        image: vprofile/vprofiledb
           #args:
           #- "--ignore-db-dir"
           #- "lost+found"
@@ -31,7 +31,7 @@ spec:
            valueFrom:
              secretKeyRef:
                name: app-secret
-               key: db-password
+               key: db-pass
       nodeSelector:
         zone: us-east-1a
       volumes:
@@ -40,7 +40,7 @@ spec:
           awsElasticBlockStore:
              volumeID: vol-0a9efc80541da1744
              fsType: ext4
-             
+
       initContainers:
         - name: busybox
           image: busybox:latest
