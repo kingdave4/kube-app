@@ -32,7 +32,7 @@ spec:
              secretKeyRef:
                name: app-secret
                key: db-pass
-      nodeName: i-05d6f3b3ee8774480
+      nodeName: i-00654f362364306e5
       volumes:
         - name: vpro-db-data
           # This AWS EBS volume must already exist.
