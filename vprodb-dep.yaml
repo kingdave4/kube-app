@@ -31,7 +31,7 @@ spec:
            valueFrom:
              secretKeyRef:
                name: app-secret
-               key: db-pass
+               key: db-password
       nodeName: i-00654f362364306e5
       volumes:
         - name: vpro-db-data
